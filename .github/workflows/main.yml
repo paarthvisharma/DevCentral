@@ -7,7 +7,7 @@ on:
 
 jobs:
     setup:
-        runs-on: prajwal-mac
+        runs-on: prajwal
 
         steps:
         - name: Checkout Node
