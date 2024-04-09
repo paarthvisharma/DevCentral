@@ -1,0 +1,28 @@
+name: Run Cypress on pull request to main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    setup:
+        runs-on: prajwal-mac
+
+        steps:
+        - name: Checkout Node
+          uses: actions/checkout@v2
+
+        - name: Check if Node.js is installed
+          run: node -v
+          id: check_node_is_installed
+          continue-on-error: true
+        
+        - name: Install Node.js and npm
+          if: steps.check_node_is_installed.outcome == 'failure'
+          uses: actions/setup-node@v2
+          with:
+            node-version: '20'
+
+        - name: Print completed message
+          run: echo "Node.js is installed and setup is complete"
