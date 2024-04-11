@@ -7,7 +7,7 @@ on:
 
 jobs:
     setup:
-        runs-on: prajwal-mac
+        runs-on: prajwal
 
         steps:
         - name: Checkout Node
@@ -25,4 +25,4 @@ jobs:
             node-version: '20'
 
         - name: Print completed message
-          run: echo "Node.js is installed and setup is complete"
+          run: echo "Node.js is installed and setup is complete and working"
